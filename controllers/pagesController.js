@@ -1,3 +1,4 @@
+
 // exporta funciones de homepage y about
 
 // controllers/PagesController.js
@@ -19,14 +20,34 @@ exports.homepage = (req, res) => {
 }
 
 exports.single = (req, res) => {
-  ProductModel.single()
+  let id = req.params.id;
+  ProductModel.single(id.substring(1))
   .then((data) => {
     let product = data;
-    console.log("product:", product);
+    console.log("product to see:", product);
     res.render('pages/checkProduct', { product: product });
+  })
+  .catch(function(e){
+    console.log(e);
   })
 }
 
+exports.editForm = (req, res) => {  
+  let id = req.params.id;
+  ProductModel.single(id.substring(1))
+  .then((data) => {
+    let product = data;
+    console.log("product to edit:", product);
+    res.render('pages/editForm', { product: product });
+  })
+}
+
+exports.editProduct = (req, res) => {
+  console.log(res.body);
+
+
+
+}
 exports.about = (req, res) => {   
-    res.render('pages/aboutUs')
+    res.render('pages/aboutUs');
 }

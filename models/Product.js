@@ -20,10 +20,17 @@ exports.all = () => {
 }
 
 // Obtiene un solo producto
-exports.single = () => {
+exports.single = (id) => {
   // consulta
   return knex
     .select('*')
     .from('products')
-    .where('id', '1');
+    .where('id', id);
+}
+
+exports.editForm = () =>  {
+  return knex
+  .select('*')
+  .from('products')
+  .where('id', '1');
 }
