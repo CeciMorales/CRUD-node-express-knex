@@ -37,3 +37,10 @@ exports.edit = (id, product) => {
     .where('id', id);
 
 }
+
+exports.add = (product) => {
+  return knex('products').
+  insert({ name: product.name, 
+          description: product.description, 
+          price: product.price });
+}

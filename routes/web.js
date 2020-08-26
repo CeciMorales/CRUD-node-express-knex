@@ -19,4 +19,6 @@ router.post('/editProduct/:id', urlencodedParser, PagesController.editProduct);
 
 router.get('/addForm', PagesController.addForm);
 
+router.post('/addProduct', urlencodedParser, PagesController.addProduct);
+
 module.exports = router;

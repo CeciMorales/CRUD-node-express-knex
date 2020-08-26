@@ -60,6 +60,16 @@ exports.addForm = (req, res) => {
 
 }
 
+exports.addProduct = (req, res) => {
+  let product = req.body;
+  console.log("new product", product);
+  ProductModel.add(product)
+  .then(() => {
+    console.log("Se agregó bien?");
+    res.redirect('/');
+  })
+}
+
 
 exports.about = (req, res) => {   
     res.render('pages/aboutUs');
