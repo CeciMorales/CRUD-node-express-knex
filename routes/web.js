@@ -14,6 +14,9 @@ router.get('/single/:id', PagesController.single);
 
 router.get('/editForm/:id', PagesController.editForm);
 
+// para usar body dentro de request
 router.post('/editProduct/:id', urlencodedParser, PagesController.editProduct);
+
+router.get('/addForm', PagesController.addForm);
 
 module.exports = router;

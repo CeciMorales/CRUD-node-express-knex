@@ -53,10 +53,14 @@ exports.editProduct = (req, res) => {
     console.log('todo chido?');
     res.redirect('/');
   }) 
+}
 
-
+exports.addForm = (req, res) => {
+  res.render('pages/addForm');
 
 }
+
+
 exports.about = (req, res) => {   
     res.render('pages/aboutUs');
 }
