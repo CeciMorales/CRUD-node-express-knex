@@ -43,7 +43,16 @@ exports.editForm = (req, res) => {
 }
 
 exports.editProduct = (req, res) => {
-  console.log(res.body);
+  let id = req.params.id;
+  console.log("edit product", id);
+  let product = req.body;
+  console.log('product todo', product);
+
+  ProductModel.edit(id.substring(1), product)
+  .then(() => {
+    console.log('todo chido?');
+    res.redirect('/');
+  }) 
 
 
 

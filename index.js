@@ -14,7 +14,8 @@ let appConfigs = require('./configs/app');
 app.use('/', webroutes);
 //Parsear el body usando body parser
 //app.use(bodyParser.json()); // body en formato json
-app.use(bodyParser.urlencoded({ extended: true })); //body formulario
+//app.use(bodyParser.urlencoded({ extended: true })); //body formulario
+
 
 
 // configurar handlebars

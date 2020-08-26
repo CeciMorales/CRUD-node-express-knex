@@ -28,9 +28,12 @@ exports.single = (id) => {
     .where('id', id);
 }
 
-exports.editForm = () =>  {
-  return knex
-  .select('*')
-  .from('products')
-  .where('id', '1');
+exports.edit = (id, product) => {
+  return knex('products')
+    .update(product)
+    .update({name: product.name, 
+            description: product.description, 
+            price: product.price})
+    .where('id', id);
+
 }
