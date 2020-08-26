@@ -10,7 +10,7 @@ router.get('/', PagesController.homepage);
 
 router.get('/about-us', PagesController.about);
 
-router.get('/single/:id', PagesController.single);
+router.get('/showProduct/:id', PagesController.showProduct);
 
 router.get('/editForm/:id', PagesController.editForm);
 

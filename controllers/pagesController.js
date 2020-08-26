@@ -19,12 +19,11 @@ exports.homepage = (req, res) => {
     });
 }
 
-exports.single = (req, res) => {
+exports.showProduct = (req, res) => {
   let id = req.params.id;
   ProductModel.single(id.substring(1))
   .then((data) => {
     let product = data;
-    console.log("product to see:", product);
     res.render('pages/checkProduct', { product: product });
   })
   .catch(function(e){
@@ -37,44 +36,39 @@ exports.editForm = (req, res) => {
   ProductModel.single(id.substring(1))
   .then((data) => {
     let product = data;
-    console.log("product to edit:", product);
     res.render('pages/editForm', { product: product });
   })
 }
 
 exports.editProduct = (req, res) => {
   let id = req.params.id;
-  console.log("edit product", id);
   let product = req.body;
-  console.log('product todo', product);
 
   ProductModel.edit(id.substring(1), product)
   .then(() => {
-    console.log('todo chido?');
     res.redirect('/');
   }) 
 }
 
 exports.addForm = (req, res) => {
   res.render('pages/addForm');
-
 }
 
 exports.addProduct = (req, res) => {
   let product = req.body;
-  console.log("new product", product);
   ProductModel.add(product)
   .then(() => {
-    console.log("Se agregó bien?");
     res.redirect('/');
   })
 }
 
 exports.deleteProduct = (req, res) => {
   let id = req.params.id;
-  console.log("a eliminar ", id);
+  ProductModel.delete(id.substring(1))
+  .then(() => {
+    res.redirect('/');
+  })
 }
-
 
 exports.about = (req, res) => {   
     res.render('pages/aboutUs');

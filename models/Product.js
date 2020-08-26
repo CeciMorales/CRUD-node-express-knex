@@ -44,3 +44,10 @@ exports.add = (product) => {
           description: product.description, 
           price: product.price });
 }
+
+exports.delete = (id) => {
+  return knex('products')
+  .delete()
+  .where('id', id);
+
+}
