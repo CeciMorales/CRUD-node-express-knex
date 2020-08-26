@@ -1,9 +1,62 @@
-<h1>Hola MVC</h1>
-<p>This is my first page</p>
-<button onclick="window.location.href='/about-us'">Acerca de nosotros</button>
-<p>Lista de productos: </p>
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+
+<!-- BOOTSTRAP NAVBAR-->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">CRUD</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <button class="btn btn-link" onclick="window.location.href='/about-us'">Acerca de nosotros</button>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="mx-auto mt-4 mb-4" style="width: 300px;">
+    <h2>Lista de productos</h2>
+</div>
+
+<div class="card-columns">
 {{#each products}}
-<p>{{ id }} - {{name}}</p>
+<div class="card bg-light mb-3" style="max-width: 18rem;">
+  <div class="card-header"> ID: {{id}} </div>
+  <div class="card-body">
+    <h5 class="card-title"> {{name}} </h5>
+    <p class="card-text"> {{description}} </p>
+  </div>
+  <div class="card-header">
+    <ul class="nav nav-pills card-header-pills">
+      <li class="nav-item">
+        <button class="btn btn-primary mr-2" >Ver</button>
+      </li>
+      <li class="nav-item">
+        <button class="btn btn-secondary mr-2" >Editar</button>
+
+      </li>
+      <li class="nav-item">
+        <button class="btn btn-danger mr-2" >Eliminar</button>
+      </li>
+    </ul>
+  </div>
+</div>
 {{/each}}
+</div>
+
+
+<!-- Latest compiled and minified JavaScript -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
+
 
 

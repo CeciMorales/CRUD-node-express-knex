@@ -18,3 +18,4 @@ exports.all = () => {
     .select('*')
     .from('products');
 }
+
