@@ -21,4 +21,6 @@ router.get('/addForm', PagesController.addForm);
 
 router.post('/addProduct', urlencodedParser, PagesController.addProduct);
 
+router.get('/deleteProduct/:id', PagesController.deleteProduct);
+
 module.exports = router;

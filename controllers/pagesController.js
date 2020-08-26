@@ -70,6 +70,11 @@ exports.addProduct = (req, res) => {
   })
 }
 
+exports.deleteProduct = (req, res) => {
+  let id = req.params.id;
+  console.log("a eliminar ", id);
+}
+
 
 exports.about = (req, res) => {   
     res.render('pages/aboutUs');
