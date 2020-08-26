@@ -19,3 +19,11 @@ exports.all = () => {
     .from('products');
 }
 
+// Obtiene un solo producto
+exports.single = () => {
+  // consulta
+  return knex
+    .select('*')
+    .from('products')
+    .where('id', '1');
+}

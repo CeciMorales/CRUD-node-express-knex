@@ -16,47 +16,32 @@
   <div class="collapse navbar-collapse" id="navbarText">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <button class="btn btn-link" onclick="window.location.href='/about-us'">Acerca de nosotros</button>
+        <button class="btn btn-link" onclick="window.location.href='/'">Inicio</button>
       </li>
     </ul>
   </div>
 </nav>
 
-<div class="mx-auto mt-4 mb-4" style="width: 300px;">
-    <h2>Lista de productos</h2>
+<div class="mx-auto mt-4 mb-4" style="width: 100px;">
+    <h2>Producto</h2>
 </div>
 
-<div class="card-columns">
-{{#each products}}
-<div class="card bg-light mb-3" style="max-width: 18rem;">
-  <div class="card-header"> ID: {{id}} </div>
+{{#each product}}
+<div class="card text-center">
+  <div class="card-header">
+    ID: {{id}}
+  </div>
   <div class="card-body">
     <h5 class="card-title"> {{name}} </h5>
-    <p class="card-text"> {{description}} </p>
+    <p class="card-text">{{description}}</p>
   </div>
-  <div class="card-header">
-    <ul class="nav nav-pills card-header-pills">
-      <li class="nav-item">
-        <button class="btn btn-primary mr-2" onclick="window.location.href='/single'" >Ver</button>
-      </li>
-      <li class="nav-item">
-        <button class="btn btn-secondary mr-2" >Editar</button>
-
-      </li>
-      <li class="nav-item">
-        <button class="btn btn-danger mr-2" >Eliminar</button>
-      </li>
-    </ul>
+  <div class="card-footer text-muted">
+    Precio: {{price}}
   </div>
 </div>
 {{/each}}
-</div>
-
 
 <!-- Latest compiled and minified JavaScript -->
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </body>
 </html>
-
-
-

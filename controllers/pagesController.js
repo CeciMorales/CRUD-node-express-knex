@@ -18,6 +18,14 @@ exports.homepage = (req, res) => {
     });
 }
 
+exports.single = (req, res) => {
+  ProductModel.single()
+  .then((data) => {
+    let product = data;
+    console.log("product:", product);
+    res.render('pages/checkProduct', { product: product });
+  })
+}
 
 exports.about = (req, res) => {   
     res.render('pages/aboutUs')

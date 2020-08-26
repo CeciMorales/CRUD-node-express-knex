@@ -6,4 +6,6 @@ router.get('/', PagesController.homepage);
 
 router.get('/about-us', PagesController.about);
 
+router.get('/single', PagesController.single);
+
 module.exports = router;
